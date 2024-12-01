@@ -1,0 +1,250 @@
+{
+  "type": "bundle",
+  "id": "bundle--9a4a8b0a-7988-4c47-b66c-cc5c793477ff",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.0",
+      "id": "identity--dronesswarm-tech-1234",
+      "created": "2024-01-01T00:00:00.000Z",
+      "modified": "2024-01-01T00:00:00.000Z",
+      "name": "DroneSwarm Technologies Inc.",
+      "identity_class": "organization",
+      "sectors": ["technology"],
+      "contact_information": "info@dronesswarmtech.com"
+    },
+    {
+      "type": "intrusion-set",
+      "spec_version": "2.0",
+      "id": "intrusion-set--unknown-apt",
+      "created": "2024-04-20T12:00:00.000Z",
+      "modified": "2024-04-20T12:00:00.000Z",
+      "name": "Unknown APT",
+      "description": "An advanced persistent threat group of unknown origin."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.0",
+      "id": "attack-pattern--T1078",
+      "created": "2024-04-20T12:30:00.000Z",
+      "modified": "2024-04-20T12:30:00.000Z",
+      "name": "Valid Accounts",
+      "description": "Adversaries may use valid accounts to gain initial access to and execute commands within a network.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.0",
+      "id": "attack-pattern--T1078-002",
+      "created": "2024-04-20T12:45:00.000Z",
+      "modified": "2024-04-20T12:45:00.000Z",
+      "name": "Domain Accounts",
+      "description": "Adversaries may use previously compromised credentials to authenticate to a network's domain.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078.002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.0",
+      "id": "attack-pattern--T1078-003",
+      "created": "2024-04-20T13:00:00.000Z",
+      "modified": "2024-04-20T13:00:00.000Z",
+      "name": "Local Accounts",
+      "description": "Adversaries may use local accounts to authenticate to a network's resources.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078.003"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.0",
+      "id": "attack-pattern--T1021",
+      "created": "2024-04-20T13:15:00.000Z",
+      "modified": "2024-04-20T13:15:00.000Z",
+      "name": "Remote Services",
+      "description": "Adversaries may use remote services to move laterally within the network.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1021"
+        }
+      ]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.0",
+      "id": "malware--e4e6b1f0-7f99-44d7-bd6d-d8c3c38ab0e3",
+      "created": "2024-04-20T14:00:00.000Z",
+      "modified": "2024-04-20T14:00:00.000Z",
+      "name": "Mimikatz",
+      "description": "Mimikatz is a post-exploitation tool used to dump credentials from memory.",
+      "labels": ["credential-dumping", "post-exploitation"],
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "S0002"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--af1df709-6ca1-46de-bf89-f67d6fc379d5",
+      "created_by_ref": "identity--dronesswarm-tech-1234",
+      "created": "2024-04-24T18:34:26.000Z",
+      "modified": "2024-04-24T18:34:26.000Z",
+      "name": "SMSvcService.exe",
+      "object_marking_refs": [
+        "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+        "marking-definition--d896763f-3f6f-4917-86e8-1a4b043d9771"
+      ],
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.'MD5'='b1de37bf229890ac181bdef1ad8ee0c2' OR file:hashes.'SHA-1'='ffdb3cc7ab5b01d276d23ac930eb21ffe3202d11' OR file:hashes.'SHA-256'='99b80c5ac352081a64129772ed5e1543d94cad708ba2adc46dc4ab7a0bd563f1' OR file:hashes.'SHA-512'='e41df636a36ac0cce38e7db5c2ce4d04a1a7f9bc274bdf808912d14067dc1ef478268035521d0d4b7bcf96facce7f515560b38a7ebe47995d861b9c482e07e25']",
+      "pattern_type": "stix",
+      "pattern_version": "2.1",
+      "valid_from": "2024-05-17T12:34:40.637321Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--e3cfd99e-3b5a-4a58-8a21-4c9f5e7baf1d",
+      "created_by_ref": "identity--dronesswarm-tech-1234",
+      "created": "2024-04-25T14:15:26.000Z",
+      "modified": "2024-04-25T14:15:26.000Z",
+      "name": "Reverse Proxy IP",
+      "object_marking_refs": [
+        "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+        "marking-definition--d896763f-3f6f-4917-86e8-1a4b043d9771"
+      ],
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = '203.95.8.98']",
+      "pattern_type": "stix",
+      "pattern_version": "2.1",
+      "valid_from": "2024-05-17T13:00:40.637321Z"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.0",
+      "id": "relationship--a4f1c3d3-c6d9-4f23-8166-d9b739b95f91",
+      "created": "2024-04-20T15:00:00.000Z",
+      "modified": "2024-04-20T15:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "intrusion-set--unknown-apt",
+      "target_ref": "attack-pattern--T1078",
+      "description": "Unknown APT used valid accounts to gain initial access to DroneSwarm Technologies Inc."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.0",
+      "id": "relationship--e16f4c9e-bd4b-4c70-8e91-9d9b1b1f9f96",
+      "created": "2024-04-20T15:15:00.000Z",
+      "modified": "2024-04-20T15:15:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "intrusion-set--unknown-apt",
+      "target_ref": "attack-pattern--T1078-002",
+      "description": "Unknown APT used compromised domain accounts to authenticate to DroneSwarm Technologies Inc.'s network."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.0",
+      "id": "relationship--ea1e5c8a-d1f5-4f7f-8c7c-b87a5c3e3f6f",
+      "created": "2024-04-20T15:30:00.000Z",
+      "modified": "2024-04-20T15:30:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "intrusion-set--unknown-apt",
+      "target_ref": "attack-pattern--T1021",
+      "description": "Unknown APT used remote services for lateral movement within DroneSwarm Technologies Inc.'s network."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.0",
+      "id": "relationship--d4f9b1b4-6d5f-4e3f-9f1d-9b1b1b1f9f96",
+      "created": "2024-04-20T16:00:00.000Z",
+      "modified": "2024-04-20T16:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "intrusion-set--unknown-apt",
+      "target_ref": "malware--e4e6b1f0-7f99-44d7-bd6d-d8c3c38ab0e3",
+      "description": "Unknown APT used Mimikatz to dump credentials from memory within DroneSwarm Technologies Inc.'s network, specifically targeting machines in the EN LAN."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.0",
+      "id": "relationship--f3c5a9c4-d5f5-4c5f-8f7c-b8a5c5f3e3f6",
+      "created": "2024-04-20T16:15:00.000Z",
+      "modified": "2024-04-20T16:15:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "intrusion-set--unknown-apt",
+      "target_ref": "attack-pattern--T1078-003",
+      "description": "Unknown APT used local accounts to authenticate to resources within DroneSwarm Technologies Inc.'s network."
+    },
+    {
+      "type": "user-account",
+      "spec_version": "2.0",
+      "id": "user-account--john.doe",
+      "created": "2024-01-01T00:00:00.000Z",
+      "modified": "2024-01-01T00:00:00.000Z",
+      "user_id": "john.doe@dronesswarmtech.com",
+      "account_login": "john.doe",
+      "account_type": "domain"
+    },
+    {
+      "type": "user-account",
+      "spec_version": "2.0",
+      "id": "user-account--jane.smith",
+      "created": "2024-01-01T00:00:00.000Z",
+      "modified": "2024-01-01T00:00:00.000Z",
+      "user_id": "jane.smith@dronesswarmtech.com",
+      "account_login": "jane.smith",
+      "account_type": "local"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.0",
+      "id": "relationship--8a9c5d8b-3e4f-4f8b-b7a3-dc3f4b5a5d8e",
+      "created": "2024-04-20T16:30:00.000Z",
+      "modified": "2024-04-20T16:30:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "intrusion-set--unknown-apt",
+      "target_ref": "user-account--john.doe",
+      "description": "Unknown APT used the domain account of John Doe to authenticate to the network."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.0",
+      "id": "relationship--1c2f4b7d-6d5e-4c8f-9a1b-8b1c5f4e4b5d",
+      "created": "2024-04-20T16:45:00.000Z",
+      "modified": "2024-04-20T16:45:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "intrusion-set--unknown-apt",
+      "target_ref": "user-account--jane.smith",
+      "description": "Unknown APT used the local account of Jane Smith to access resources within the network."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.0",
+      "id": "relationship--b5a8d5c4-1e4e-4b8c-8a5d-c3e4a8b7a4c7",
+      "created": "2024-04-20T12:10:00.000Z",
+      "modified": "2024-04-20T12:10:00.000Z",
+      "relationship_type": "targets",
+      "source_ref": "intrusion-set--unknown-apt",
+      "target_ref": "identity--dronesswarm-tech-1234",
+      "description": "Unknown APT targets DroneSwarm Technologies Inc."
+    }
+  ]
+}
